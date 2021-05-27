@@ -1,0 +1,61 @@
+.category-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255,255,255,0.9);
+  }
+  .category-modal__box {
+    background-color: #fff;
+    box-shadow: 0 24px 32px rgba(21, 35, 56, 0.16);
+    min-width: 200px;
+    max-width: 300px;
+  }
+  .category-modal__head {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+  }
+  .category-modal__title {
+    padding: 16px;
+    margin: 0;
+  }
+  .category-modal__close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 40px;
+  }
+  
+  .category-item {
+    display: flex;
+    transition: background-color 0.25s ease-in-out;
+    cursor: pointer;
+  }
+  .category-item:hover  {
+    background-color: #eee;
+  }
+  .category-item--checkbox {
+    flex: 0 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .category-item + .category-item {
+    border-top: 1px solid #eee;
+  }
+  .category-item__title {
+    flex: 1 0 0%;
+    min-width: 0;
+    padding: 12px 0;
+  }
+  .category-item__dot {
+    flex: 0 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

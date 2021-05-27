@@ -1,0 +1,32 @@
+
+/* .checkbox--checked состояния как и .checkbox, */
+.checkbox, 
+.checkbox--checked {
+	display: inline-flex;
+	border: 2px solid rgba(0,0,0,0.2);
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	cursor: pointer;
+}
+
+/* добавляем состояния если  состояния checked имеет true*/
+.checkbox--checked {
+	border: 1px solid #006cff; 
+	background-color: #006cff ;
+}
+
+.checkbox__input {
+	
+	opacity: 0; 
+	position: absolute; 
+	/* что бы input внутри кружочка не был кликабельный вставляем width: 0; и height: 0;*/
+	
+	 width: 0; 
+	 height: 0; 
+}
+
+

@@ -1,0 +1,30 @@
+.button-circle {
+    position: absolute;
+    bottom: 44px;
+    right: 16px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 24px 32px rgba(21,35,56, 0.16);
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.botton-circle:hover {
+    background-color:  #006cff;
+
+}
+.button-circle__icon {
+    fill: #006cff;
+    width: 24px;
+    height: 24px;
+    transition: fill 0.25s ease-in-out;
+}
+
+.botton-circle:hover .button-circle__icon {
+    fill:#fff;
+}
