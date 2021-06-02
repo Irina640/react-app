@@ -1,0 +1,14 @@
+.close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+.close-button__icon {
+    transform: rotate(45deg);
+}
+.close-button__icon:hover {
+    fill: #aaa;
+}

@@ -3,4 +3,7 @@
     width: 12px;
     height: 12px;
     border-radius: 50%;
-}
+  }
+  .category-dot.no-category {
+    box-shadow: inset 0 0 0 1px #ccc;
+  }

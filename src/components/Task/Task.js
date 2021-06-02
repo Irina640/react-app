@@ -1,23 +1,31 @@
+  
 import { Checkbox } from "../Checkbox/Checkbox";
 import { Input } from "../Input/Input";
 import "./Task.css";
-import { categoryList } from "../../Data/categoryList";
+import { categoryList } from "../../data/categoryList";
 import { CategoryDot } from "../CategoryDot/CategoryDot";
 import { Delete } from "../Delete/Delete";
-import { taskKeys } from "../../App";
 import { useContext } from "react";
-
+import { EditingContext } from "../../providers/EditingProvider";
 
 export const taskKeys = {
   done: "done",
-  text: "text",
+  copytext: "text",
   category: "category",
 };
 
-export const Task = ({ done, text, category, updateList, index, deleteTask,id }) => {
-  // export const Task = ({ done, text, category, updateList, index, deleteTask,id , isEditing }) => {
-  console.log(categoryList);
-  сonst { isEditing } = useContext(EditingContext);
+export const Task = ({
+  done,
+  text,
+  category,
+  updateList,
+  index,
+  deleteTask,
+  id,
+  setCategoryModalOpen,
+  setActiveTask,
+}) => {
+  const { isEditing } = useContext(EditingContext);
   const currentCategory = categoryList.find((categoryItem) => categoryItem.id === category);
   const handleState = (checked) => {
     updateList(index, taskKeys.done, checked);
@@ -25,17 +33,14 @@ export const Task = ({ done, text, category, updateList, index, deleteTask,id })
   const handleText = (text) => {
     updateList(index, taskKeys.copytext, text);
   };
-  // const handleFocus =() => {
-  //  setFocusedItem(id);
-  // //  console.log("focus", index);
-  // };
-  // const handleBlur = () => {
-  //   setFocusedItem();
-  // };
   const handleDelete = () => {
     deleteTask(id);
   };
-  return (         
+  const openCategoryModal = () => {
+    setCategoryModalOpen(true);
+    setActiveTask({ category, index });
+  };
+  return (
     <div className="task">
       <div className="task__action">
         <div className={`task__action-item ${isEditing && "task__action-item--flipped"}`}>
@@ -46,14 +51,11 @@ export const Task = ({ done, text, category, updateList, index, deleteTask,id })
         </div>
       </div>
       <div className="task__input">
-        <Input text ={text} handleText={handleText} />
+        <Input text={text} handleText={handleText} />
       </div>
-      <div className="task__category">
-        {/* проверяем если вообще в выбраном id категория color*/}
-        {/* {currentCategory && currentCategory.color} */}
-        {currentCategory && <CategoryDot color={currentCategory.color}/>} 
+      <div className="task__category" onClick={openCategoryModal}>
+        <CategoryDot color={currentCategory && currentCategory.color} />
       </div>
-     
     </div>
   );
 };

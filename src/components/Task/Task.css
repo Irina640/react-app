@@ -1,24 +1,20 @@
 .task {
-    display: flex;
-    border-bottom: 1px solid rgba(0,0,0,0.10);
+  display: flex;
+  border-bottom: 1px solid rgba(0,0,0,0.10);
 }
-
-.task__action {
-    flex: 0 0 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .task__input {
-    flex: 1 0 0%;
-    padding: 18px 0;
+  flex: 1 0 0%;
+  padding: 18px 0;
 }
 .task__category {
-    flex: 0 0 44px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 0 0 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.task__action {
+  flex: 0 0 60px;
+  display: flex;
 }
 .task__action-item,
 .task__action-item-back {

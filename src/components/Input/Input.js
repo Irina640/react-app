@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import './Input.css';
 
-
 export const Input = ({text, handleText}) => {
     // что текст не писался с лправо на лево  const [innerText,SetinnerText] = useState(text);
     const textRef = useRef(text);
